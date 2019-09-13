@@ -1,4 +1,4 @@
-class BIL_BILLING_CYCLE_DEFINITIONS {
+export default class BIL_BILLING_CYCLE_DEFINITIONS {
 
     verify() {
         cy.get('h1').contains('Definicje cykli billingowych').should('be.visible');
@@ -6,5 +6,3 @@ class BIL_BILLING_CYCLE_DEFINITIONS {
     } 
 
 }
-
-export default BIL_BILLING_CYCLE_DEFINITIONS;

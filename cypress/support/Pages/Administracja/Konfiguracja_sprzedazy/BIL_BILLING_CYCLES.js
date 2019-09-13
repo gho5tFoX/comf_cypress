@@ -1,4 +1,4 @@
-class BIL_BILLING_CYCLES {
+export default class BIL_BILLING_CYCLES {
 
     verify() {
         cy.get('h1').contains('Cykle bilingowe').should('be.visible');
@@ -6,5 +6,3 @@ class BIL_BILLING_CYCLES {
     } 
 
 }
-
-export default BIL_BILLING_CYCLES;

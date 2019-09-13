@@ -1,4 +1,4 @@
-class CRM_RODO_LOG {
+export default class CRM_RODO_LOG {
 
     verify() {
         cy.get('h1').contains('Historia ochrony danych osobowych').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_RODO_LOG {
     } 
 
 }
-
-export default CRM_RODO_LOG;

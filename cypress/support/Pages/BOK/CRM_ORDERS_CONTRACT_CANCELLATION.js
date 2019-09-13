@@ -1,4 +1,4 @@
-class CRM_ORDERS_CONTRACT_CANCELLATION {
+export default class CRM_ORDERS_CONTRACT_CANCELLATION {
 
     verify() {
         cy.get('h1').contains('Zamówienia rozwiązania umowy').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_ORDERS_CONTRACT_CANCELLATION {
     } 
 
 }
-
-export default CRM_ORDERS_CONTRACT_CANCELLATION;

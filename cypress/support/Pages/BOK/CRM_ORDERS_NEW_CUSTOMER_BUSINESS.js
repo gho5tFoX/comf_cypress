@@ -1,4 +1,4 @@
-class CRM_ORDERS_NEW_CUSTOMER_BUSINESS {
+export default class CRM_ORDERS_NEW_CUSTOMER_BUSINESS {
 
     verify() {
         cy.get('h1').contains('Zamówienia nowego klienta biznesowego').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_ORDERS_NEW_CUSTOMER_BUSINESS {
     } 
 
 }
-
-export default CRM_ORDERS_NEW_CUSTOMER_BUSINESS;

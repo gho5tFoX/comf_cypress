@@ -1,4 +1,4 @@
-class FIN_INVOICE_MASS_ORDERS {
+export default class FIN_INVOICE_MASS_ORDERS {
 
     verify() {
         cy.get('h1').contains('Procesy fakturowania masowego').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_INVOICE_MASS_ORDERS {
     } 
 
 }
-
-export default FIN_INVOICE_MASS_ORDERS;

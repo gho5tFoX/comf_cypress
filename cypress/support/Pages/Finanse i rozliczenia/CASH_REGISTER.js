@@ -1,4 +1,4 @@
-class CASH_REGISTER {
+export default class CASH_REGISTER {
 
     verify() {
         cy.get('h1').contains('Kasa').should('be.visible');
@@ -6,5 +6,3 @@ class CASH_REGISTER {
     } 
 
 }
-
-export default CASH_REGISTER;

@@ -1,4 +1,4 @@
-class FIN_ACCOUNT_PLAN {
+export default class FIN_ACCOUNT_PLAN {
 
     verify() {
         cy.get('h1').contains('Konta księgowe').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_ACCOUNT_PLAN {
     } 
 
 }
-
-export default FIN_ACCOUNT_PLAN;

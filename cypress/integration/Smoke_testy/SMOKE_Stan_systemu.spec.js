@@ -23,13 +23,7 @@ describe("Smoke testy: Stan systemu", () => {
         navigationPage.toogleTopMenu('Stan systemu');
         navigationPage.sideMenuParent('Zdarzenia', 'Lista zdarzeń');
         s2eEventsPage.verify();
-    })
-
-    it("Smoke: Lista zdarzeń", () => {
-
-        bokHomePage.verify();
-        navigationPage.toogleTopMenu('Stan systemu');
-        navigationPage.sideMenuParent('Zdarzenia', 'Lista zdarzeń RTRM');
+        navigationPage.sideMenuChild('Lista zdarzeń RTRM');
         s2eRtmEventsPage.verify();
     })
 

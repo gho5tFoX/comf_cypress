@@ -1,4 +1,4 @@
-class REP_REPORTS {
+export default class REP_REPORTS {
 
     verify() {
         cy.get('h1').contains('Raporty').should('be.visible');
@@ -6,5 +6,3 @@ class REP_REPORTS {
     } 
 
 }
-
-export default REP_REPORTS;

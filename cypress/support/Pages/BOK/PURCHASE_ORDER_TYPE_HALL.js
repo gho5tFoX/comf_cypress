@@ -1,4 +1,4 @@
-class PURCHASE_ORDER_TYPE_HALL {
+export default class PURCHASE_ORDER_TYPE_HALL {
 
     verify() {
         cy.get('h1').contains('Przygotowanie zamówienia').should('be.visible');
@@ -6,5 +6,3 @@ class PURCHASE_ORDER_TYPE_HALL {
     } 
 
 }
-
-export default PURCHASE_ORDER_TYPE_HALL;

@@ -1,4 +1,4 @@
-class RES_SUPPLIES {
+export default class RES_SUPPLIES {
 
     verify() {
         cy.get('h1').contains('Dostawy').should('be.visible');
@@ -6,5 +6,3 @@ class RES_SUPPLIES {
     } 
 
 }
-
-export default RES_SUPPLIES;

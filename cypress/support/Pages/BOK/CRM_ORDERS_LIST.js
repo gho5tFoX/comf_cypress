@@ -1,4 +1,4 @@
-class CRM_ORDERS_LIST {
+export default class CRM_ORDERS_LIST {
 
     verify() {
         cy.get('h1').contains('Lista zamówień').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_ORDERS_LIST {
     } 
 
 }
-
-export default CRM_ORDERS_LIST;

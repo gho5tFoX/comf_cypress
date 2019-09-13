@@ -1,4 +1,4 @@
-class CRM_ORDER_RESERVATIONS {
+export default class CRM_ORDER_RESERVATIONS {
 
     verify() {
         cy.get('h1').contains('Rezerwacje zasobów').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_ORDER_RESERVATIONS {
     } 
 
 }
-
-export default CRM_ORDER_RESERVATIONS;

@@ -1,4 +1,4 @@
-class CRM_RODO_CONSENTS {
+export default class CRM_RODO_CONSENTS {
 
     verify() {
         cy.get('h1').contains('Statusy klientów').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_RODO_CONSENTS {
     } 
 
 }
-
-export default CRM_RODO_CONSENTS;

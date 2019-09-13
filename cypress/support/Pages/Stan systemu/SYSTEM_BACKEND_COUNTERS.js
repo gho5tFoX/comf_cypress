@@ -1,4 +1,4 @@
-class SYSTEM_BACKEND_COUNTERS {
+export default class SYSTEM_BACKEND_COUNTERS {
 
     verify() {
         cy.get('h1').contains('Statystyki pracy systemu').should('be.visible');
@@ -6,5 +6,3 @@ class SYSTEM_BACKEND_COUNTERS {
     } 
 
 }
-
-export default SYSTEM_BACKEND_COUNTERS;

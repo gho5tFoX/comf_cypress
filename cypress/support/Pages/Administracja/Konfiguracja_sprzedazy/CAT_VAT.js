@@ -1,4 +1,4 @@
-class CAT_VAT {
+export default class CAT_VAT {
 
     verify() {
         cy.get('h1').contains('Stawki VAT').should('be.visible');
@@ -6,5 +6,3 @@ class CAT_VAT {
     } 
 
 }
-
-export default CAT_VAT;

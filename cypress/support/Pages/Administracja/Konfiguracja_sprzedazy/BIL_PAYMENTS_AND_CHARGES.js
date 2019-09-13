@@ -1,4 +1,4 @@
-class BIL_PAYMENTS_AND_CHARGES {
+export default class BIL_PAYMENTS_AND_CHARGES {
 
     verify() {
         cy.get('h1').contains('Płatności i naliczanie').should('be.visible');
@@ -6,5 +6,3 @@ class BIL_PAYMENTS_AND_CHARGES {
     } 
 
 }
-
-export default BIL_PAYMENTS_AND_CHARGES;

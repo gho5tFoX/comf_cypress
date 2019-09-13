@@ -1,4 +1,4 @@
-class RES_RESOURCE_LOCATIONS {
+export default class RES_RESOURCE_LOCATIONS {
     
 
     verify() {
@@ -7,5 +7,3 @@ class RES_RESOURCE_LOCATIONS {
     } 
 
 }
-
-export default RES_RESOURCE_LOCATIONS;

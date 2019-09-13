@@ -1,4 +1,4 @@
-class FIN_BANK_ACCOUNT_STATEMENTS {
+export default class FIN_BANK_ACCOUNT_STATEMENTS {
 
     verify() {
         cy.get('h1').contains('Wyciągi bankowe').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_BANK_ACCOUNT_STATEMENTS {
     } 
 
 }
-
-export default FIN_BANK_ACCOUNT_STATEMENTS;

@@ -1,4 +1,4 @@
-class FIN_INVOICES {
+export default class FIN_INVOICES {
 
     verify() {
         cy.get('h1').contains('Lista dokumentów sprzedażowych').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_INVOICES {
     } 
 
 }
-
-export default FIN_INVOICES;

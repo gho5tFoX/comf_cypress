@@ -1,4 +1,4 @@
-class DIC_BILLING_UNITS {
+export default class DIC_BILLING_UNITS {
 
     verify() {
         cy.get('h1').contains('Jednostki miary').should('be.visible');
@@ -6,5 +6,3 @@ class DIC_BILLING_UNITS {
     } 
 
 }
-
-export default DIC_BILLING_UNITS;

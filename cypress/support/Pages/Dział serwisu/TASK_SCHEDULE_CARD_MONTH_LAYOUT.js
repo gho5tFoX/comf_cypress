@@ -1,4 +1,4 @@
-class TASK_SCHEDULE_CARD_MONTH_LAYOUT {
+export default class TASK_SCHEDULE_CARD_MONTH_LAYOUT {
 
     verify() {
         cy.get('h1').contains('Konfiguracja harmonogramu techników').should('be.visible');
@@ -6,5 +6,3 @@ class TASK_SCHEDULE_CARD_MONTH_LAYOUT {
     }
 
 }
-
-export default TASK_SCHEDULE_CARD_MONTH_LAYOUT;

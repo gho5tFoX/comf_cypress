@@ -1,4 +1,4 @@
-class BOK_HOME_PAGE {
+export default class BOK_HOME_PAGE {
 
     verify() {
         cy.get('#search_box').should('be.visible');
@@ -6,5 +6,3 @@ class BOK_HOME_PAGE {
     } 
 
 }
-
-export default BOK_HOME_PAGE;

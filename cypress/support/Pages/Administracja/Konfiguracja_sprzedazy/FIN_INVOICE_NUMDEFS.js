@@ -1,4 +1,4 @@
-class FIN_INVOICE_NUMDEFS {
+export default class FIN_INVOICE_NUMDEFS {
 
     verify() {
         cy.get('h1').contains('Numeracje faktur').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_INVOICE_NUMDEFS {
     } 
 
 }
-
-export default FIN_INVOICE_NUMDEFS;

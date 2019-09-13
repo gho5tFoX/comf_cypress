@@ -1,4 +1,4 @@
-class FIN_INVOICE_MASS_PRINTS {
+export default class FIN_INVOICE_MASS_PRINTS {
 
     verify() {
         cy.get('h1').contains('Procesy drukowania masowego').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_INVOICE_MASS_PRINTS {
     } 
 
 }
-
-export default FIN_INVOICE_MASS_PRINTS;

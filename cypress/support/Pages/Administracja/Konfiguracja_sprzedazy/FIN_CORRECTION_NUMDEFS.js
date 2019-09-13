@@ -1,4 +1,4 @@
-class FIN_CORRECTION_NUMDEFS {
+export default class FIN_CORRECTION_NUMDEFS {
 
     verify() {
         cy.get('h1').contains('Numeracje korekt').should('be.visible');
@@ -6,5 +6,3 @@ class FIN_CORRECTION_NUMDEFS {
     } 
 
 }
-
-export default FIN_CORRECTION_NUMDEFS;

@@ -1,4 +1,4 @@
-class TASK_ISSUES {
+export default class TASK_ISSUES {
 
     verify() {
         cy.get('h1').contains('Zlecenia').should('be.visible');
@@ -6,5 +6,3 @@ class TASK_ISSUES {
     }
 
 }
-
-export default TASK_ISSUES;

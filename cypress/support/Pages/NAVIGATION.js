@@ -18,7 +18,7 @@ export default class NAVIGATION {
         }
 
     sideMenuParentOnly(parent) {
-        cy.get('.sidenav label').contains(parent).click();
+        cy.get('.nav-link').contains(parent).click();
         }
 
     sideMenuChild(child) {

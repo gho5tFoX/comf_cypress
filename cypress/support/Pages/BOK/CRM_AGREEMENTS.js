@@ -1,4 +1,4 @@
-class CRM_AGREEMENTS {
+export default class CRM_AGREEMENTS {
 
     verify() {
         cy.get('h1').contains('Lista umów').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_AGREEMENTS {
     } 
 
 }
-
-export default CRM_AGREEMENTS;

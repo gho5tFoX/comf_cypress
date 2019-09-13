@@ -1,23 +1,23 @@
 import BOK_HOME_PAGE from '../../support/Pages/BOK/BOK_HOME_PAGE';
 import NAVIGATION from '../../support/Pages/NAVIGATION';
 
-import CAT_SERVICES from '../../support/Pages/Administracja/Katalog produktów/CAT_SERVICES';
-import CAT_OFFERS from '../../support/Pages/Administracja/Katalog produktów/CAT_OFFERS';
-import CAT_PACKAGES from '../../support/Pages/Administracja/Katalog produktów/CAT_PACKAGES';
-import CAT_PRODUCTS from '../../support/Pages/Administracja/Katalog produktów/CAT_PRODUCTS';
-import CAT_PROMOTIONS from '../../support/Pages/Administracja/Katalog produktów/CAT_PROMOTIONS';
+import CAT_SERVICES from '../../support/Pages/Administracja/Katalog_produktow/CAT_SERVICES';
+import CAT_OFFERS from '../../support/Pages/Administracja/Katalog_produktow/CAT_OFFERS';
+import CAT_PACKAGES from '../../support/Pages/Administracja/Katalog_produktow/CAT_PACKAGES';
+import CAT_PRODUCTS from '../../support/Pages/Administracja/Katalog_produktow/CAT_PRODUCTS';
+import CAT_PROMOTIONS from '../../support/Pages/Administracja/Katalog_produktow/CAT_PROMOTIONS';
 
-import BIL_BILLING_CYCLES from '../../support/Pages/Administracja/Konfiguracja sprzedaży/BIL_BILLING_CYCLES';
-import BIL_BILLING_CYCLE_DEFINITIONS from '../../support/Pages/Administracja/Konfiguracja sprzedaży/BIL_BILLING_CYCLE_DEFINITIONS';
-import BIL_PAYMENTS_AND_CHARGES from '../../support/Pages/Administracja/Konfiguracja sprzedaży/BIL_PAYMENTS_AND_CHARGES';
-import CAT_VAT from '../../support/Pages/Administracja/Konfiguracja sprzedaży/CAT_VAT';
-import CRM_SALES_DATA from '../../support/Pages/Administracja/Konfiguracja sprzedaży/CRM_SALES_DATA';
-import CRM_SALES_PROFILES from '../../support/Pages/Administracja/Konfiguracja sprzedaży/CRM_SALES_PROFILES';
-import DIC_BILLING_UNITS from '../../support/Pages/Administracja/Konfiguracja sprzedaży/DIC_BILLING_UNITS';
-import FIN_ACCOUNT_PLAN from '../../support/Pages/Administracja/Konfiguracja sprzedaży/FIN_ACCOUNT_PLAN';
-import FIN_BANK_BOX_OFFICE from '../../support/Pages/Administracja/Konfiguracja sprzedaży/FIN_BANK_BOX_OFFICE';
-import FIN_CORRECTION_NUMDEFS from '../../support/Pages/Administracja/Konfiguracja sprzedaży/FIN_CORRECTION_NUMDEFS';
-import FIN_INVOICE_NUMDEFS from '../../support/Pages/Administracja/Konfiguracja sprzedaży/FIN_INVOICE_NUMDEFS';
+import BIL_BILLING_CYCLES from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/BIL_BILLING_CYCLES';
+import BIL_BILLING_CYCLE_DEFINITIONS from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/BIL_BILLING_CYCLE_DEFINITIONS';
+import BIL_PAYMENTS_AND_CHARGES from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/BIL_PAYMENTS_AND_CHARGES';
+import CAT_VAT from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/CAT_VAT';
+import CRM_SALES_DATA from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/CRM_SALES_DATA';
+import CRM_SALES_PROFILES from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/CRM_SALES_PROFILES';
+import DIC_BILLING_UNITS from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/DIC_BILLING_UNITS';
+import FIN_ACCOUNT_PLAN from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/FIN_ACCOUNT_PLAN';
+import FIN_BANK_BOX_OFFICE from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/FIN_BANK_BOX_OFFICE';
+import FIN_CORRECTION_NUMDEFS from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/FIN_CORRECTION_NUMDEFS';
+import FIN_INVOICE_NUMDEFS from '../../support/Pages/Administracja/Konfiguracja_sprzedazy/FIN_INVOICE_NUMDEFS';
 
 import CRM_CUSTOMER_SERVICE_OFFICES from '../../support/Pages/Administracja/Obsluga_klientow/CRM_CUSTOMER_SERVICE_OFFICES';
 import CUSTOMER_FEATURES from '../../support/Pages/Administracja/Obsluga_klientow/CUSTOMER_FEATURES';
@@ -308,7 +308,7 @@ describe("Smoke testy: Administracja", () => {
 
     })
 
-    it.only("Smoke: Konfiguracja dodatkowa", () => {
+    it("Smoke: Konfiguracja dodatkowa", () => {
 
         const admSettingsPage = new ADM_SETTINGS;
         const dicHolidaysPage = new DIC_HOLLIDAYS;

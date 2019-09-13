@@ -1,4 +1,4 @@
-class CRM_ORDERS_PHYSICAL_RESOURCES_RETURN {
+export default class CRM_ORDERS_PHYSICAL_RESOURCES_RETURN {
 
     verify() {
         cy.get('h1').contains('Zamówienia zwrotu urządzeń').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_ORDERS_PHYSICAL_RESOURCES_RETURN {
     } 
 
 }
-
-export default CRM_ORDERS_PHYSICAL_RESOURCES_RETURN;

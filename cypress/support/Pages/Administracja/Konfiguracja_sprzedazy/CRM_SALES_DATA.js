@@ -1,4 +1,4 @@
-class CRM_SALES_DATA {
+export default class CRM_SALES_DATA {
 
     verify() {
         cy.get('h1').contains('Dane sprzedawcy do faktury').should('be.visible');
@@ -6,5 +6,3 @@ class CRM_SALES_DATA {
     } 
 
 }
-
-export default CRM_SALES_DATA;

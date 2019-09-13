@@ -1,4 +1,4 @@
-class S2E_RTRM_EVENTS {
+export default  class S2E_RTRM_EVENTS {
 
     verify() {
         cy.get('h1').contains('Zdarzenia').should('be.visible');
@@ -6,5 +6,3 @@ class S2E_RTRM_EVENTS {
     } 
 
 }
-
-export default S2E_RTRM_EVENTS;
