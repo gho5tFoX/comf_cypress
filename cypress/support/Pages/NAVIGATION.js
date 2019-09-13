@@ -14,7 +14,7 @@ export default class NAVIGATION {
 
     sideMenuParent(parent, child) {
         cy.get('.sidenav label').contains(parent).click();
-        cy.get('.ng-star-inserted').contains(child).click();
+        cy.get(`a[title="${child}"]`).click();
         }
 
     sideMenuParentOnly(parent) {
@@ -22,10 +22,11 @@ export default class NAVIGATION {
         }
 
     sideMenuChild(child) {
-        cy.get('.ng-star-inserted').each(($ele)=> {
-            if ($ele.text().trim() === child) {
-              cy.wrap($ele).click();
-            }
-        })
+        cy.get(`a[title="${child}"]`).click();
+        // (($ele)=> {
+        //     if ($ele.text().trim() === child) {
+        //       cy.wrap($ele).click();
+        //     }
+        // })
     }
 }

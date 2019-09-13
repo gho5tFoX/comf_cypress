@@ -45,6 +45,28 @@ import TEL_NUMBERS from '../../support/Pages/Administracja/Telefonia/TEL_NUMBERS
 import TEL_PHONE_NUMBER_TAG_DEF from '../../support/Pages/Administracja/Telefonia/TEL_PHONE_NUMBER_TAG_DEF';
 import TEL_TELECOM_OPERATORS from '../../support/Pages/Administracja/Telefonia/TEL_TELECOM_OPERATORS';
 
+import TAR_CALCULATION_DEFINITIONS from '../../support/Pages/Administracja/Biling/TAR_CALCULATION_DEFINITIONS';
+import TAR_DAILY_PERIODS from '../../support/Pages/Administracja/Biling/TAR_DAILY_PERIODS';
+import TAR_DIRECTIONS from '../../support/Pages/Administracja/Biling/TAR_DIRECTIONS';
+import TAR_NUMBERING_ZONES from '../../support/Pages/Administracja/Biling/TAR_NUMBERING_ZONES';
+import TAR_PREFIXES from '../../support/Pages/Administracja/Biling/TAR_PREFIXES';
+import TAR_PRICE_LISTS from '../../support/Pages/Administracja/Biling/TAR_PRICE_LISTS';
+import TAR_TARIFF_GROUPS from '../../support/Pages/Administracja/Biling/TAR_TARIFF_GROUPS';
+
+import ADM_USER_DATA from '../../support/Pages/Administracja/Zarzadzanie_uzytkownikami/ADM_USER_DATA';
+import HMDL_APPLICATIONS from '../../support/Pages/Administracja/Zarzadzanie_uzytkownikami/HMDL_APPLICATIONS';
+import HMDL_ATTRIBUTES from '../../support/Pages/Administracja/Zarzadzanie_uzytkownikami/HMDL_ATTRIBUTES';
+import HMDL_GROUPS from '../../support/Pages/Administracja/Zarzadzanie_uzytkownikami/HMDL_GROUPS';
+import HMDL_USERS from '../../support/Pages/Administracja/Zarzadzanie_uzytkownikami/HMDL_USERS';
+
+import ADM_NUMERATOR_DEFS from '../../support/Pages/Administracja/Dokumenty/ADM_NUMERATOR_DEFS';
+import JOOD_SCRIPTS from '../../support/Pages/Administracja/Dokumenty/JOOD_SCRIPTS';
+import REP_DEFINITIONS from '../../support/Pages/Administracja/Dokumenty/REP_DEFINITIONS';
+
+import ADM_SETTINGS from '../../support/Pages/Administracja/Konfiguracja_dodatkowa/ADM_SETTINGS';
+import DIC_HOLLIDAYS from '../../support/Pages/Administracja/Konfiguracja_dodatkowa/DIC_HOLLIDAYS';
+
+
 describe("Smoke testy: Administracja", () => {
 
     const bokHomePage = new BOK_HOME_PAGE;
@@ -197,7 +219,7 @@ describe("Smoke testy: Administracja", () => {
 
     })
 
-    it.only("Smoke: Telefonia", () => {
+    it("Smoke: Telefonia", () => {
 
         const telExchangesPage = new TEL_EXCHANGES;
         const telNumbersPage = new TEL_NUMBERS;
@@ -214,6 +236,89 @@ describe("Smoke testy: Administracja", () => {
         telNumbersPage.verify();
         navigationPage.sideMenuChild('Etykiety numerów');
         telPhoneNumberTagDefPage.verify();
+
+    })
+
+    it("Smoke: Biling", () => {
+
+        const tarCalculationDefinitionsPage = new TAR_CALCULATION_DEFINITIONS;
+        const tarDailyPeriodsPage = new TAR_DAILY_PERIODS;
+        const tarDirectionsPage = new TAR_DIRECTIONS;
+        const tarNumberingZonesPage = new TAR_NUMBERING_ZONES;
+        const tarPrefixesPage = new TAR_PREFIXES;
+        const tarPriceListsPage = new TAR_PRICE_LISTS;
+        const tarTariffGroupsPage = new TAR_TARIFF_GROUPS;
+
+        bokHomePage.verify();
+        navigationPage.toogleTopMenu('Administracja');
+        navigationPage.sideMenuParent('Biling', 'Kierunki');
+        tarDirectionsPage.verify();
+        navigationPage.sideMenuChild('Strefy numeracyjne');
+        tarNumberingZonesPage.verify();
+        navigationPage.sideMenuChild('Prefiksy');
+        tarPrefixesPage.verify();
+        navigationPage.sideMenuChild('Okresy dobowe');
+        tarDailyPeriodsPage.verify();
+        navigationPage.sideMenuChild('Sposoby obliczania kosztów');
+        tarCalculationDefinitionsPage.verify();
+        navigationPage.sideMenuChild('Grupy taryf');
+        tarTariffGroupsPage.verify();
+        navigationPage.sideMenuChild('Cenniki');
+        tarPriceListsPage.verify();
+
+    })
+
+    it("Smoke: Zarządzanie użytkownikami", () => {
+
+        const admUserDataPage = new ADM_USER_DATA;
+        const hmdlApplicationsPage = new HMDL_APPLICATIONS;
+        const hmdlAttributesPage = new HMDL_ATTRIBUTES;
+        const hmdlGroupsPage = new HMDL_GROUPS;
+        const hmdlUsersPage = new HMDL_USERS;
+
+        bokHomePage.verify();
+        navigationPage.toogleTopMenu('Administracja');
+        navigationPage.sideMenuParent('Zarządzanie użytkownikami', 'Użytkownicy');
+        hmdlUsersPage.verify();
+        navigationPage.sideMenuChild('Grupy');
+        hmdlGroupsPage.verify();
+        navigationPage.sideMenuChild('Atrybuty');
+        hmdlAttributesPage.verify();
+        navigationPage.sideMenuChild('Aplikacje');
+        hmdlApplicationsPage.verify();
+        navigationPage.sideMenuChild('Zarządzanie użytkownikami');
+        admUserDataPage.verify();
+
+    })
+
+    it("Smoke: Dokumenty", () => {
+
+        const admNumeratorDefsPage = new ADM_NUMERATOR_DEFS;
+        const admJoodScriptsPage = new JOOD_SCRIPTS;
+        const repDefinitionsPage = new REP_DEFINITIONS;
+
+        bokHomePage.verify();
+        navigationPage.toogleTopMenu('Administracja');
+        navigationPage.sideMenuParent('Dokumenty', 'Numeratory');
+        admNumeratorDefsPage.verify();
+        navigationPage.sideMenuChild('Szablony');
+        admJoodScriptsPage.verify();
+        navigationPage.sideMenuChild('Raporty');
+        repDefinitionsPage.verify();
+
+    })
+
+    it.only("Smoke: Konfiguracja dodatkowa", () => {
+
+        const admSettingsPage = new ADM_SETTINGS;
+        const dicHolidaysPage = new DIC_HOLLIDAYS;
+
+        bokHomePage.verify();
+        navigationPage.toogleTopMenu('Administracja');
+        navigationPage.sideMenuParent('Konfiguracja dodatkowa', 'Święta');
+        dicHolidaysPage.verify();
+        navigationPage.sideMenuChild('Opcje konfiguracyjne');
+        admSettingsPage.verify();
 
     })
 
