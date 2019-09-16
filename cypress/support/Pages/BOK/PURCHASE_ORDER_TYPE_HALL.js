@@ -5,4 +5,8 @@ export default class PURCHASE_ORDER_TYPE_HALL {
         cy.get('button[title="Przejdź"]').should('be.visible');
     } 
 
+    newOrder(client) {
+        return cy.contains(`c-display-text`, `${client}`).next('.c-sdd-process-action')
+    }
+
 }
