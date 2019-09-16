@@ -61,7 +61,8 @@ import HMDL_USERS from '../../support/Pages/Administracja/Zarzadzanie_uzytkownik
 
 import ADM_NUMERATOR_DEFS from '../../support/Pages/Administracja/Dokumenty/ADM_NUMERATOR_DEFS';
 import JOOD_SCRIPTS from '../../support/Pages/Administracja/Dokumenty/JOOD_SCRIPTS';
-import REP_DEFINITIONS from '../../support/Pages/Administracja/Dokumenty/REP_DEFINITIONS';
+
+import REP_DEFINITIONS from '../../support/Pages/Administracja/Raporty/REP_DEFINITIONS';
 
 import ADM_SETTINGS from '../../support/Pages/Administracja/Konfiguracja_dodatkowa/ADM_SETTINGS';
 import DIC_HOLLIDAYS from '../../support/Pages/Administracja/Konfiguracja_dodatkowa/DIC_HOLLIDAYS';
@@ -295,7 +296,6 @@ describe("Smoke testy: Administracja", () => {
 
         const admNumeratorDefsPage = new ADM_NUMERATOR_DEFS;
         const admJoodScriptsPage = new JOOD_SCRIPTS;
-        const repDefinitionsPage = new REP_DEFINITIONS;
 
         bokHomePage.verify();
         navigationPage.toogleTopMenu('Administracja');
@@ -303,7 +303,16 @@ describe("Smoke testy: Administracja", () => {
         admNumeratorDefsPage.verify();
         navigationPage.sideMenuChild('Szablony');
         admJoodScriptsPage.verify();
-        navigationPage.sideMenuChild('Raporty');
+
+    })
+
+    it("Smoke: Raporty", () => {
+
+        const repDefinitionsPage = new REP_DEFINITIONS;
+
+        bokHomePage.verify();
+        navigationPage.toogleTopMenu('Administracja');
+        navigationPage.sideMenuParent('Raporty', 'Definicje raportów');
         repDefinitionsPage.verify();
 
     })
