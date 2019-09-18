@@ -7,6 +7,13 @@ export default class ADDRESS_ROOM_NEW_IND {
 
     } 
 
+    addressSearch(adres) {
+
+        cy.get('input[type="text"]').type(adres);
+        cy.get('div[role="option"]').contains(adres).click();
+        
+    }
+
     next() {
 
         return cy.get('button').contains('Dalej');

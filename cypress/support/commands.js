@@ -23,6 +23,9 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+import '../../node_modules/@4tw/cypress-drag-drop/index';
+
+
 Cypress.Commands.add( 'login', () => {
   
     const username = 'sort';
