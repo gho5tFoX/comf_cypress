@@ -1,7 +1,7 @@
 export default class CRM_ORDERS_LIST {
 
     verify() {
-        cy.get('h1').contains('Lista zamówień').should('be.visible');
+        cy.verify('Lista zamówień');
         cy.get('.datagrid-table').should('be.visible');
     } 
 

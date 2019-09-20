@@ -1,7 +1,7 @@
 export default class CRM_ORDERS_PHYSICAL_RESOURCES_RETURN {
 
     verify() {
-        cy.get('h1').contains('Zamówienia zwrotu urządzeń').should('be.visible');
+        cy.verify('Zamówienia zwrotu urządzeń');
         cy.get('.datagrid-table').should('be.visible');
     } 
 

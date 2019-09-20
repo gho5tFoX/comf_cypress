@@ -1,27 +1,21 @@
 export default class ADDRESS_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wybierz adres instalacji dla zamówienia').should('be.visible');
-
+        cy.verify('Wybierz adres instalacji dla zamówienia');
     } 
 
     addressSearch(adres) {
-
         cy.get('input[type="text"]').type(adres);
         cy.get('div[role="option"]').contains(adres).click();
-        
+        cy.wait(1000);
     }
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
-
-        return cy.get('button').contains('Wróć');
+        cy.get('button').contains('Wróć').click();
     }
 
 }

@@ -1,7 +1,7 @@
 export default class CASH_REGISTER {
 
     verify() {
-        cy.get('h1').contains('Kasa').should('be.visible');
+        cy.verify('Kasa');
         cy.get('div').contains('Wybierz kasę').should('be.visible');
     } 
 

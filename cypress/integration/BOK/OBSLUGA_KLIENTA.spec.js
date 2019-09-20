@@ -31,64 +31,92 @@ describe("Obsługa klienta: Nowa umowa - klient indywidualny", () => {
 
     })
 
-    it("Smoke: Nowa umowa - klient indywidualny", () => {
+    // it("Smoke: Nowa umowa - klient indywidualny", () => {
+
+    //     bokHomePage.verify();
+    //     navigationPage.toogleTopMenu('BOK');
+    //     navigationPage.sideMenuParent('Obsługa klienta','Zamówienie nowej umowy');
+    //     purchaseOrderTypeHallPage.verify();
+    //     purchaseOrderTypeHallPage.newOrder('Klient indywidualny');
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('BOK');
+    //     csoRoomNewIndPage.verify();
+    //     csoRoomNewIndPage.next();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Adres instalacji');
+    //     addressRoomNewIndPage.verify();
+    //     addressRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Oferty')
+    //     offersRoomNewIndPage.verify();
+    //     offersRoomNewIndPage.end();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Zlecenie')
+    //     crmIssueDataRoomNewIndPage.verify();
+    //     crmIssueDataRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Oświadczenia')
+    //     consentRoomNewIndPage.verify();
+    //     consentRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Dane klienta');
+    //     clientDataRoomNewIndPage.verify();
+    //     clientDataRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Dane umowy');
+    //     contractDataRoomNewIndPage.verify();
+    //     contractDataRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+    //     newIndOrderHallPage.room('Podsumowanie');
+    //     summaryRoomNewIndPage.verify();
+    //     summaryRoomNewIndPage.back();
+    //     newIndOrderHallPage.verify();
+
+    // })
+
+    it("Nowa umowa - klient indywidualny", () => {
+
+        cy.uidRoute('uid');
 
         bokHomePage.verify();
         navigationPage.toogleTopMenu('BOK');
         navigationPage.sideMenuParent('Obsługa klienta','Zamówienie nowej umowy');
         purchaseOrderTypeHallPage.verify();
-        purchaseOrderTypeHallPage.newOrder('Klient indywidualny').click();
+        purchaseOrderTypeHallPage.newOrder('Klient indywidualny');
+
+        cy.wait('@uid');
+
         newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('BOK').click();
-        csoRoomNewIndPage.verify();
-        csoRoomNewIndPage.back().click();
-        newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Adres instalacji').click();
+        newIndOrderHallPage.room('Adres instalacji');
         addressRoomNewIndPage.verify();
-        addressRoomNewIndPage.back().click();
+        addressRoomNewIndPage.addressSearch('Katowice');
+        addressRoomNewIndPage.next();
         newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Oferty').click()
+        purchaseOrderTypeHallPage.newOrder('Oferty');
         offersRoomNewIndPage.verify();
-        offersRoomNewIndPage.end().click();
+
+        offersRoomNewIndPage.addOffer('@uid');
+
+        offersRoomNewIndPage.end();
         newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Zlecenie').click()
-        crmIssueDataRoomNewIndPage.verify();
-        crmIssueDataRoomNewIndPage.back().click();
-        newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Oświadczenia').click()
+        newIndOrderHallPage.room('Oświadczenia')
         consentRoomNewIndPage.verify();
-        consentRoomNewIndPage.back().click();
+        consentRoomNewIndPage.sposobPozyskania('Telefoniczny');
+        consentRoomNewIndPage.zgodaNaEfakture();
+        consentRoomNewIndPage.next();
         newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Dane klienta').click();
+        newIndOrderHallPage.room('Dane klienta');
         clientDataRoomNewIndPage.verify();
-        clientDataRoomNewIndPage.back().click();
+        clientDataRoomNewIndPage.profilSprzedazy('Domyślny profil sprzedaży');
+        clientDataRoomNewIndPage.imie('Jan');
+        clientDataRoomNewIndPage.nazwisko('Kowalski');
+        clientDataRoomNewIndPage.pesel('41032251691');
+        clientDataRoomNewIndPage.next();
         newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Dane umowy').click();
+        newIndOrderHallPage.room('Dane umowy');
         contractDataRoomNewIndPage.verify();
-        contractDataRoomNewIndPage.back().click();
-        newIndOrderHallPage.verify();
-        newIndOrderHallPage.room('Podsumowanie').click();
-        summaryRoomNewIndPage.verify();
-        summaryRoomNewIndPage.back().click();
-        newIndOrderHallPage.verify();
-
-    })
-
-    it.only("Nowa umowa - klient indywidualny", () => {
-
-        bokHomePage.verify();
-        navigationPage.toogleTopMenu('BOK');
-        navigationPage.sideMenuParent('Obsługa klienta','Zamówienie nowej umowy');
-        purchaseOrderTypeHallPage.verify();
-        purchaseOrderTypeHallPage.newOrder('Klient indywidualny').click();
-        newIndOrderHallPage.verify();
-        // newIndOrderHallPage.room('Adres instalacji').click();
-        // addressRoomNewIndPage.verify();
-        // addressRoomNewIndPage.addressSearch('Katowice');
-        // addressRoomNewIndPage.next().click();
-        // newIndOrderHallPage.verify();
-        purchaseOrderTypeHallPage.newOrder('Oferty').click();
-        offersRoomNewIndPage.drag();
+        contractDataRoomNewIndPage.next();
+        
     })
 
 })

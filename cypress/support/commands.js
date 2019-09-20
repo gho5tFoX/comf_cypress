@@ -23,11 +23,9 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
-import '../../node_modules/@4tw/cypress-drag-drop/index';
 
 
-Cypress.Commands.add( 'login', () => {
-  
+Cypress.Commands.add('login', () => {
     const username = 'sort';
     const password = 'sort';
 
@@ -35,5 +33,15 @@ Cypress.Commands.add( 'login', () => {
     cy.get('#username').type(username);
     cy.get('#password').type(password);
     cy.get('button[type="submit"]').click();
+})
 
-} )
+Cypress.Commands.add('uidRoute', (uid) => {
+    cy.server();
+    cy.route('PUT', '/api/suo/execute/CRM_ORDER_INITIALIZE_INDIVIDUAL').as(uid);
+})
+
+Cypress.Commands.add('verify', (h1) => {
+    cy.contains('h1', h1).as('h1')
+    cy.get('@h1').should('be.visible');
+    cy.get('div > .alert-items').should('not.exist');
+})

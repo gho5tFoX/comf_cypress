@@ -2,71 +2,53 @@
 
 export default class OFFERS_ROOM_NEW_IND {
 
-    dataTransfer = new DataTransfer;
+    heimdallurl = 'http://192.168.1.21:7500';
+    clientsecret = 'G24UsTS9D0Bj';
+    offerId = '19';
+    offerName = 'PROMO Telewizja Kuchenna V1';
+    serviceStartDate = '2019-09-01T10:11:38Z'
+    serviceStopDate = '9999-12-31T00:00:00Z'
+    baseUrl = 'http://192.168.1.21:7580';
+    bearerToken ='';
+    UID = '';
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wybierz oferty dla zamówienia').should('be.visible');
-
+        cy.verify('Wybierz oferty dla zamówienia');
     } 
 
+    addOffer(uid) {
 
-    drag() {
+        cy.get(uid).then( (xhr)=> {
+            this.UID = xhr.responseBody['PURCHASE_ORDER_UID'];
+            cy.request('POST', `${this.heimdallurl}/security/oauth/token?grant_type=password&username=sort&password=sort&client_id=sortbss&client_secret=${this.clientsecret}`)
+                    .then((response) => {
+                    expect(response.body).to.have.property('access_token');
+                    this.bearerToken = response.body.access_token;
+                    cy.request({
+                        method:'POST', 
+                        url: `${this.baseUrl}/api/sort/crm/order/addOrderItem`,
+                        headers: {
+                            'content-type': 'application/json',
+                            'Authorization': 'bearer '+`${this.bearerToken}`
+                                },             
+                    body: {
+                        "orderUid":`${this.UID}`,
+                        "offerId": `${this.offerId}`,
+                        "offerName":`${this.offerName}`,
+                        "validSince":`${this.serviceStartDate}`,
+                        "validUntil": `${this.serviceStopDate}`,
+                        "dependentProducts":[]
+                    }
 
-        // cy.wait(3000);
-
-        cy.contains('.custom-alert-item', 'Hot start dla nowych').as('drag')
-        cy.get('div').contains('Przeciągnij wybrane oferty tutaj').as('drop');
-        
-        cy.get('@drag').drag('@drop');
-        
-
-        // const dataTransfer = new DataTransfer;
-
-        // cy.get('.custom-alert-item').contains('Hot start dla nowych').first().as('drag')
-        // cy.wait(3000)
-        
-        // cy.get('@drag').trigger('dragstart', { dataTransfer });
-
-        // cy.get('div').contains('Przeciągnij wybrane oferty tutaj').trigger('drop', {dataTransfer})
-
-
-        // .trigger('mousemove', { clientX: 1541, clientY: 343, pageX: 1541, pageY: 343, bubbles: false, cancelable: false }).trigger('mouseup');
-        // cy.get('div').contains('Przeciągnij wybrane oferty tutaj').should('be.visible').trigger('mousemove').trigger('mouseup');
-
-        // cy.wait(2000)
-        // cy.get('@drag')
-        // .trigger('mousedown', { which: 1 })
-        //   .trigger('mousemove', { clientX: 1480, clientY: 345, pageX: 1480, pageY: 345})
-        //   .trigger('mouseup', {force: true})
-    }
-
-        // cy.get('div').contains('Przeciągnij wybrane oferty tutaj').trigger('drop')
-
-        // const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
-        //     cy
-        //       .get(fromElement)
-        //       .should('be.visible')
-        //       .first()
-        //       .trigger('mousedown', { which: 1 });
-        //     cy.get(toElement)
-        //       .should('be.visible')
-        //       .trigger('mousemove', location)
-        //       .trigger('mouseup');
-        //   };
-    
-
-    movePiece () {
-        cy.get('div .draggable').contains('Hot start dla nowych')
-          .trigger('mousedown', { which: 1 })
-          .trigger('mousemove', { clientX: 1480, clientY: 345, pageX: 1480, pageY: 345})
-          .trigger('mouseup', {force: true})
+                        
+            
+                    })
+                })
+        })
     }
 
     end() {
-
-        return cy.get('button').contains('Zakończ wybieranie ofert');
+        cy.get('button').contains('Zakończ wybieranie ofert').click();
     }
 
 }

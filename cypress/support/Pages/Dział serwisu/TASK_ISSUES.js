@@ -1,7 +1,7 @@
 export default class TASK_ISSUES {
 
     verify() {
-        cy.get('h1').contains('Zlecenia').should('be.visible');
+        cy.verify('Zlecenia');
         cy.get('.datagrid-table').should('be.visible');
     }
 

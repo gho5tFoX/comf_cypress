@@ -1,20 +1,19 @@
 export default class CRM_ISSUE_DATA_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wprowadź dane zlecenia dla zamówienia').should('be.visible');
-
+        cy.verify('Wprowadź dane zlecenia dla zamówienia');
     } 
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
+        cy.get('button').contains('Wróć').click();
+    }
 
-        return cy.get('button').contains('Wróć');
+    typeDropdown(typ) {
+        cy.get('select[name="type"]').select(typ);
     }
 
 }

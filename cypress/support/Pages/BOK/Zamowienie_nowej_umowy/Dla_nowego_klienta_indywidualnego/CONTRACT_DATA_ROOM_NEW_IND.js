@@ -1,20 +1,16 @@
 export default class CONTRACT_DATA_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wprowadź dane umowy dla zamówienia').should('be.visible');
+        cy.verify('Wprowadź dane umowy dla zamówienia');
 
     } 
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
-
-        return cy.get('button').contains('Wróć');
+        cy.get('button').contains('Wróć').click();
     }
 
 }

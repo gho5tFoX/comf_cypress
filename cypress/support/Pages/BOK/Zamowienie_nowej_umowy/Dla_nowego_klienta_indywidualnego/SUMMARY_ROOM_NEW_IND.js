@@ -1,15 +1,11 @@
 export default class SUMMARY_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Podsumowanie zamówienia').should('be.visible');
-
+        cy.verify('Podsumowanie zamówienia');
     } 
 
     back() {
-
-        return cy.get('button').contains('Powrót');
+        cy.get('button').contains('Powrót').click();
     }
 
 }

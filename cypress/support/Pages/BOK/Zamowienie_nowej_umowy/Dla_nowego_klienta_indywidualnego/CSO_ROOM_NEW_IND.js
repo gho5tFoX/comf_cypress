@@ -1,20 +1,15 @@
 export default class CSO_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wybierz biuro obsługi klienta dla zamówienia').should('be.visible');
-
+        cy.verify('Wybierz biuro obsługi klienta dla zamówienia');
     } 
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
-
-        return cy.get('button').contains('Wróć');
+        cy.get('button').contains('Wróć').click();
     }
 
 }

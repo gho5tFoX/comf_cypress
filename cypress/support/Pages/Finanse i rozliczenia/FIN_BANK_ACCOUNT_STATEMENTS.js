@@ -1,7 +1,7 @@
 export default class FIN_BANK_ACCOUNT_STATEMENTS {
 
     verify() {
-        cy.get('h1').contains('Wyciągi bankowe').should('be.visible');
+        cy.verify('Wyciągi bankowe');
         cy.get('.datagrid-table').should('be.visible');
     } 
 

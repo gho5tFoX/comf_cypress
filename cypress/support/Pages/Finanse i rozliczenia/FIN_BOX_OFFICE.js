@@ -1,7 +1,7 @@
 export default class FIN_BOX_OFFICE {
 
     verify() {
-        cy.get('h1').contains('Raporty kasowe').should('be.visible');
+        cy.verify('Raporty kasowe');
         cy.get('.datagrid-table').should('be.visible');
     } 
 

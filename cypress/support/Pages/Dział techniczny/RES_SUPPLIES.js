@@ -1,7 +1,7 @@
 export default class RES_SUPPLIES {
 
     verify() {
-        cy.get('h1').contains('Dostawy').should('be.visible');
+        cy.verify('Dostawy');
         cy.get('.datagrid-table').should('be.visible');
     } 
 

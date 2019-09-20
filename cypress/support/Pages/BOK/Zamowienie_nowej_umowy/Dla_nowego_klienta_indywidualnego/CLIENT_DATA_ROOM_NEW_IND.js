@@ -1,20 +1,33 @@
 export default class CLIENT_DATA_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wprowadź dane klienta dla zamówienia').should('be.visible');
-
+        cy.verify('Wprowadź dane klienta dla zamówienia');
     } 
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
-
-        return cy.get('button').contains('Wróć');
+        cy.get('button').contains('Wróć').click();
     }
+
+    profilSprzedazy(profil) {
+        cy.get('select[name="salesProfile"]').select(profil);
+    }
+
+    imie(_imie) {
+        cy.get('#forename').type(_imie);
+    }
+
+    nazwisko(_nazwisko) {
+        cy.get('#surname').type(_nazwisko);
+    }
+
+    pesel(_pesel) {
+        cy.get('#pin').type(_pesel);
+    }
+    
+    
 
 }

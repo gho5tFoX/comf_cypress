@@ -1,20 +1,23 @@
 export default class CONSENTS_ROOM_NEW_IND {
 
     verify() {
-
-        cy.wait(1000)
-        cy.get('h1').contains('Wybierz oświadczenia dla zamówienia').should('be.visible');
-
+        cy.verify('Wybierz oświadczenia dla zamówienia');
     } 
 
     next() {
-
-        return cy.get('button').contains('Dalej');
+        cy.get('button').contains('Dalej').click();
     }
 
     back() {
+        cy.get('button').contains('Wróć').click();
+    }
 
-        return cy.get('button').contains('Wróć');
+    sposobPozyskania(sposob) {
+        cy.get('select[name="ACQUISITION"]').select(sposob);
+    }
+
+    zgodaNaEfakture() {
+        cy.get('input[name="CONSENT__EFAKTURA"]').check({force: true});
     }
 
 }

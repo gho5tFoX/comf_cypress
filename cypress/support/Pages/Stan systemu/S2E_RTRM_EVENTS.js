@@ -1,7 +1,7 @@
 export default  class S2E_RTRM_EVENTS {
 
     verify() {
-        cy.get('h1').contains('Zdarzenia').should('be.visible');
+        cy.verify('Zdarzenia');
         cy.get('.datagrid-table').should('be.visible');
     } 
 
